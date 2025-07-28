@@ -34,6 +34,15 @@ Gem::Specification.new do |spec|
 
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
+  spec.add_dependency 'gamefic', '~> 4.1'
+  spec.add_dependency 'numbers_in_words', '~> 1.0'
+
+  spec.add_development_dependency 'opal', '~> 1.7'
+  spec.add_development_dependency 'opal-rspec', '~> 1.0'
+  spec.add_development_dependency 'opal-sprockets', '~> 1.0'
+  spec.add_development_dependency 'rake', '~> 13.2'
+  spec.add_development_dependency 'rspec', '~> 3.5', '>= 3.5.0'
+  spec.add_development_dependency 'simplecov', '~> 0.14'
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
