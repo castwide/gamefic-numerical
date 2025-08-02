@@ -12,7 +12,7 @@ task default: :spec
 Opal::RSpec::RakeTask.new(:opal) do |_, config|
   Opal.append_path File.join(__dir__, 'lib')
   Opal.use_gem('gamefic')
-  Opal.use_gem('numbers_in_words')
+  Opal.use_gem('castwide_numbers_in_words')
   config.default_path = 'spec'
   config.pattern = 'spec/**/*_spec.rb'
   config.requires = ['opal_helper']
