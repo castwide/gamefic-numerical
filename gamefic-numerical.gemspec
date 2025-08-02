@@ -34,8 +34,8 @@ Gem::Specification.new do |spec|
 
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
-  spec.add_dependency 'gamefic', '~> 4.1'
   spec.add_dependency 'castwide_numbers_in_words', '~> 1.0'
+  spec.add_dependency 'gamefic', '~> 4.1'
 
   spec.add_development_dependency 'opal', '~> 1.7'
   spec.add_development_dependency 'opal-rspec', '~> 1.0'
