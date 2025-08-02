@@ -1,28 +1,46 @@
-# Gamefic::Numerical
+# gamefic-numerical
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/gamefic/numerical`. To experiment with that code, run `bin/console` for an interactive prompt.
+A Gamefic extension to enable text representations of numbers.
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+Add the gem to your Gamefic project's Gemfile:
 
-Install the gem and add to the application's Gemfile by executing:
-
-```bash
-bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+```ruby
+gem 'gamefic-numerical'
 ```
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+Require the gem in your project, e.g., in `main.rb`:
 
-```bash
-gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+```ruby
+require 'gamefic-numerical'
 ```
 
 ## Usage
 
-TODO: Write usage instructions here
+The gem adds a `numerical` query that you can use in response arguments. Numbers passed into the command will be converted to integers.
+
+Example code:
+
+```ruby
+class MyPlot < Gamefic::Plot
+  respond :count, numerical do |actor, number|
+    actor.tell "You count to #{number}."
+  end
+
+  interpret 'count to :number', 'count :number'
+end
+```
+
+Example gameplay:
+
+    > count a hundred
+
+    You count to 100.
+
+    > count to ten
+
+    You count to 10.
 
 ## Development
 
