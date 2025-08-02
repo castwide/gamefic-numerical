@@ -25,4 +25,18 @@ RSpec.describe Gamefic::Numerical do
     expect(result.match).to eq(20_000)
     expect(result.remainder).to eq('guns')
   end
+
+  it 'performs numerical queries' do
+    klass = Class.new(Gamefic::Plot) do
+      respond :count, numerical do |actor, number|
+        actor.tell "You count to #{number}."
+      end
+      interpret 'count to :number', 'count :number'
+    end
+
+    plot = klass.new
+    actor = plot.introduce
+    actor.perform 'count to a hundred'
+    expect(actor.messages).to include('You count to 100.')
+  end
 end
